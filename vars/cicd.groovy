@@ -13,7 +13,7 @@ def buildArtifact()
 
 def tomcatDeploy(ip,context)
 {
-   sh "scp ${env.WORKSPACE}/webapp/target/webapp.war ubuntu@${ip}:/var/lib/tomcat10/webapps/${context}.war"
+   sh "scp /var/lib/jenkins/workspace/webapp/target/webapp.war ubuntu@${ip}:/var/lib/tomcat10/webapps/${context}.war"
 }
 
 def executeSelenium(jobname)
