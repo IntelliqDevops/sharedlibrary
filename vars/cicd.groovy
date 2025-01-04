@@ -11,9 +11,9 @@ def buildArtifact()
 
 }
 
-def tomcatDeploy(jobname,ip,context)
+def tomcatDeploy(ip,context)
 {
-   sh "scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ip}:/var/lib/tomcat10/webapps/${context}.war"
+   sh "scp ${env.WORKSPACE}/webapp/target/webapp.war ubuntu@${ip}:/var/lib/tomcat10/webapps/${context}.war"
 }
 
 def executeSelenium(jobname)
